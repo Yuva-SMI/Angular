@@ -1,0 +1,28 @@
+[
+{
+    "id":1,
+    "username":"Sharma",
+    "email":"sharma@smi.com"
+},
+
+{
+    "id":2,
+    "username":"Shankar",
+    "email":"shankar@smi.com"
+},
+{
+    "id":3,
+    "username":"Sandeep",
+    "email":"sandeep@smi.com"
+},
+{
+    "id":4,
+    "username":"Vignesh",
+    "email":"vikki@smi.com"
+},
+{
+    "id":5,
+    "username":"Yuva",
+    "email":"yuva@smi.com"
+}
+]

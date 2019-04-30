@@ -1,0 +1,11 @@
+<section class="filter-wrapper">
+  <div class="keyword-wrapper">
+    <input type="text" id="keyword" placeholder="Search for Clients..." [formControl]="queryField" autofocus />
+  </div>
+  <ul class="filter-select">
+    <li *ngFor="let result of results | slice:0:6" class="filter-select-list">
+      <p class="artist-name">
+        {{result.clientName}}</p>
+      <span class="tags"></span>
+  </ul>
+</section>

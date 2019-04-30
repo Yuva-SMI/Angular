@@ -1,0 +1,21 @@
+<mat-dialog-content [formGroup]="editForm">
+
+  <mat-form-field>
+    <input matInput placeholder="User Id" formControlName="userId" readonly>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Id" formControlName="id" readonly>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Title" formControlName="title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Body" formControlName="body">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button matTooltip="Close without saving data"  (click)="close()">Close</button>
+  <button mat-raised-button mat-primary matTooltip="Save data" (click)="save()">Save</button>
+</mat-dialog-actions>

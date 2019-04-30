@@ -1,0 +1,7 @@
+<label>Enter Name:</label>
+<input type="text" #inname (keyup)="0"/>
+<app-child [namess]="inname.value" (cchild)="cchild=$event" ></app-child>
+<p>This is Child Message {{cchild}}</p>
+{{userService.userName}}
+
+  

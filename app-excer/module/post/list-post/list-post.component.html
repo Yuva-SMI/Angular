@@ -1,0 +1,43 @@
+<h2 style="margin: auto"> Post Details</h2>
+<button mat-raised-button color="primary" (click)="addPost()">Add User</button>
+<div>
+  <app-search></app-search>
+</div>
+<pre></pre>
+
+<mat-spinner *ngIf="loader"></mat-spinner>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="userId">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> User Id: </mat-header-cell>
+    <mat-cell *matCellDef="let iposts"> {{iposts.userId}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Id: </mat-header-cell>
+    <mat-cell *matCellDef="let iposts"> {{iposts.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Title: </mat-header-cell>
+    <mat-cell *matCellDef="let iposts"> {{iposts.title}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="body">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> Body: </mat-header-cell>
+    <mat-cell *matCellDef="let iposts"> {{iposts.body}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="buttons">
+    <mat-header-cell mat-sort-header *matHeaderCellDef> </mat-header-cell>
+    <mat-cell *matCellDef="let iposts"><button mat-stroked-button color="primary"
+        (click)="openDialog(iposts)">Edit</button>
+      <button mat-stroked-button color="primary" (click)="deletePost(iposts)">Delete</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[ 10, 15, 50, 100]" showFirstLastButtons>
+</mat-paginator>

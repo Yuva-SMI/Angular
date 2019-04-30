@@ -1,0 +1,30 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Add Post</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+      </div>
+  
+      <div class="form-group">
+        <label for="userId">userId:</label>
+        <input type="text" formControlName="userId" placeholder="userId" name="userId" class="form-control" id="userId">
+      </div>
+  
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input formControlName="title" placeholder="title" name="title" class="form-control" id="title" ng-model="title">
+        <span style="color:red" ng-show="addForm.title.$dirty && addForm.title.$invalid"></span>
+        <span ng-show="addForm.title.$touched && addForm.title.$invalid">Title is required.</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="body">Body:</label>
+        <input formControlName="body" placeholder="body" name="body" class="form-control" id="body" ng-model="body">
+        <span style="color:red" ng-show="addForm.body.$dirty && addForm.body.$invalid"></span>
+          <span ng-show="addForm.body.$touched && addForm.body.$invalid">Title is required.</span>
+      </div>
+   
+      <button class="btn btn-success">Save</button>
+    </form>
+  </div>

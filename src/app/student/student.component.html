@@ -1,0 +1,19 @@
+<form [formGroup]="form"
+      (ngSubmit)="submit()">
+  <label formArrayName="details"
+         *ngFor="let order of form.controls.details.controls; let i = index">
+    <input type="text"
+           [formControlName]="i"
+           value="{{details[i].id}}">
+    <input type="text"
+           [formControlName]="i"
+           value="{{details[i].name}}">
+    <input type="text"
+           [formControlName]="i"
+           value="{{details[i].email}}">
+    <pre></pre>
+  </label>
+
+  <br>
+  <button mat-stroked-button>Submit</button>
+</form>
